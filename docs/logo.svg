@@ -1,0 +1,27 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16433a"/>
+      <stop offset="100%" stop-color="#1f7a5c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Badge background -->
+  <circle cx="64" cy="64" r="60" fill="url(#bg3)" stroke="#9ff0c8" stroke-width="2"/>
+
+  <!-- Bridge deck -->
+  <path d="M 22 82 L 106 82" stroke="#9ff0c8" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+  <!-- Bridge arch (the "bridge" element) -->
+  <path d="M 28 82 Q 64 26 100 82" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+  <!-- Hangers -->
+  <g stroke="#9ff0c8" stroke-width="2.5" stroke-linecap="round" opacity="0.7">
+    <path d="M 44 82 L 44 58"/><path d="M 84 82 L 84 58"/><path d="M 64 82 L 64 50"/>
+  </g>
+
+  <!-- End nodes: the agent and JMeter -->
+  <circle cx="26" cy="82" r="7" fill="#ffffff"/>
+  <circle cx="102" cy="82" r="7" fill="#ffb84d"/>
+
+  <!-- Spark on the span (the message crossing the bridge) -->
+  <path d="M 68 34 L 58 50 L 65 50 L 60 62 L 73 45 L 66 45 Z" fill="#ffd166"/>
+</svg>
