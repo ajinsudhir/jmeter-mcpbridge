@@ -29,7 +29,7 @@ Part of the **SmartBlitz AI for JMeter** toolkit. Overview and screenshots: http
 
 ## Install
 
-1. Download `jmeter-mcpbridge.jar` from [Releases](../../releases).
+1. Download `jmeter-mcpbridge-1.0.0.jar` from [Releases](../../releases).
 2. Copy it into `<JMETER_HOME>/lib/ext/`.
 3. Restart JMeter.
 
