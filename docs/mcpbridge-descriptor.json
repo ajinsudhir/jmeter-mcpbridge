@@ -1,0 +1,21 @@
+[
+    {
+        "id": "jmeter-mcpbridge",
+        "name": "MCP Bridge for JMeter",
+        "description": "A localhost-only MCP (Model Context Protocol) server exposing generic JMeter test-plan operations — reading and editing whatever's currently open in the GUI — to any MCP-capable agent (Claude Code, Codex, opencode). Ten tools: get_tree, get_element_properties, add_element, modify_element, clone_element, move_element, delete_element, get_arguments, modify_argument and a heuristic analyze_dynamic_candidates scan. Every write goes through JMeter's own undo transaction. Split out from Correlation Studio so it's usable independently of that or any other plugin.",
+        "screenshotUrl": "https://github.com/ajinsudhir/jmeter-mcpbridge/raw/main/docs/screenshot.png",
+        "helpUrl": "https://github.com/ajinsudhir/jmeter-mcpbridge",
+        "vendor": "Ajin Sudhir",
+        "markerClass": "io.mcpbridge.jmeter.McpBridgeMenuCreator",
+        "componentClasses": [
+            "io.mcpbridge.jmeter.McpBridgeMenuCreator"
+        ],
+        "canUninstall": true,
+        "versions": {
+            "1.0.0": {
+                "changes": "Initial public release.",
+                "downloadUrl": "https://github.com/ajinsudhir/jmeter-mcpbridge/releases/download/v1.0.0/jmeter-mcpbridge.jar"
+            }
+        }
+    }
+]

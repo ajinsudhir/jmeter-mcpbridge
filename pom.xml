@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.mcpbridge</groupId>
+  <artifactId>jmeter-mcpbridge</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>MCP Bridge for JMeter</name>
+  <description>A localhost-only MCP (Model Context Protocol) server exposing
+    generic JMeter test-plan operations — reading and editing whatever's
+    currently open in the GUI — to any MCP-capable agent. Split out from
+    Correlation Studio so it's usable independently of that or any other
+    plugin, based on your own use case.</description>
+
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Match this to the JMeter version you are deploying into -->
+    <jmeter.version>5.6.3</jmeter.version>
+  </properties>
+
+  <dependencies>
+    <!-- Core JMeter classes: GuiPackage, JMeterTreeModel, JMeterTreeNode,
+         TestElement, org.apache.jmeter.gui.action.Copy -->
+    <dependency>
+      <groupId>org.apache.jmeter</groupId>
+      <artifactId>ApacheJMeter_core</artifactId>
+      <version>${jmeter.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- MenuCreator / GUI plugin base classes -->
+    <dependency>
+      <groupId>org.apache.jmeter</groupId>
+      <artifactId>ApacheJMeter_components</artifactId>
+      <version>${jmeter.version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>jmeter-mcpbridge</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+      </plugin>
+      <plugin>
+        <!-- Populates Implementation-Version in the jar's manifest from this
+             pom's own <version> above, read at runtime for the initialize
+             response's serverInfo.version. -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.1</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
